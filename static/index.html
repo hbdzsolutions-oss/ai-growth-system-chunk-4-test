@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Growth System — Chunk 5</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark">AGS</div>
+      <div>
+        <div class="brand-name">AI Growth System</div>
+        <div class="brand-subtitle">Platform foundation</div>
+      </div>
+      <nav class="nav" aria-label="Owner dashboard sections">
+        <button class="nav-item active" data-target="overview">Overview</button>
+        <button class="nav-item" data-target="conversations">Conversations</button>
+        <button class="nav-item" data-target="knowledge">Business Knowledge</button>
+      </nav>
+      <div class="sidebar-note">Chunk 5 · local owner surface</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NORTHSTAR BOTANICS</p>
+          <h1>Platform foundation</h1>
+          <p class="subtitle">Agent Core, Business Brain, and Business Context are now separate platform layers.</p>
+        </div>
+        <span class="status" id="apiStatus">Checking API…</span>
+      </header>
+
+      <section id="overview" class="view active">
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-label">AI employee</span>
+            <strong id="agentName">Website Assistant</strong>
+            <span class="metric-foot" id="agentStatus">ACTIVE · website</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Conversations</span>
+            <strong id="conversationCount">—</strong>
+            <span class="metric-foot">server-owned context</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Knowledge sources</span>
+            <strong id="knowledgeCount">—</strong>
+            <span class="metric-foot">retrievable Business Brain</span>
+          </article>
+        </div>
+
+        <article class="panel architecture-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="step">FOUNDATION CONTRACT</p>
+              <h2>Three independent layers</h2>
+            </div>
+          </div>
+          <div class="layer-grid">
+            <div class="layer-card">
+              <span>AGENT CORE</span>
+              <strong>How the AI acts</strong>
+              <p>Methodology, behavior, guardrails, role and reusable intelligence.</p>
+            </div>
+            <div class="layer-card">
+              <span>BUSINESS BRAIN</span>
+              <strong>What it knows</strong>
+              <p>Client-controlled sources, normalized documents, chunks and retrieval.</p>
+            </div>
+            <div class="layer-card">
+              <span>BUSINESS CONTEXT</span>
+              <strong>What happened</strong>
+              <p>Durable conversations and messages, ready for future leads and outcomes.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="conversations" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="step">BUSINESS CONTEXT</p>
+            <h2>Visitor conversations</h2>
+            <p class="hint">Each conversation is owned by the server and tied to an agent deployment.</p>
+          </div>
+          <button class="secondary-button" id="refreshConversations" type="button">Refresh</button>
+        </div>
+        <div class="split-grid">
+          <article class="panel list-panel">
+            <div id="conversationList" class="item-list"><p class="empty-note">No conversations yet.</p></div>
+          </article>
+          <article class="panel transcript-panel">
+            <div id="transcriptHeader" class="transcript-header">
+              <p class="empty-note">Select a conversation to view its transcript.</p>
+            </div>
+            <div id="transcript" class="transcript"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="knowledge" class="view">
+        <div class="section-heading">
+          <div>
+            <p class="step">BUSINESS BRAIN</p>
+            <h2>Business Knowledge</h2>
+            <p class="hint">Ingest knowledge through replaceable source loaders. The agent runtime retrieves from this layer; it does not read hard-coded demo facts.</p>
+          </div>
+          <button class="secondary-button" id="refreshKnowledge" type="button">Refresh</button>
+        </div>
+
+        <div class="knowledge-grid">
+          <article class="panel compact-panel">
+            <p class="step">ADD MANUAL SOURCE</p>
+            <form id="manualKnowledgeForm" class="stack-form">
+              <label>Title<input id="manualTitle" maxlength="300" value="Owner notes" required /></label>
+              <label>Knowledge<textarea id="manualContent" maxlength="100000" placeholder="Products, services, policies, pricing, FAQs…" required></textarea></label>
+              <button class="primary-button" type="submit">Ingest manual knowledge</button>
+            </form>
+          </article>
+
+          <article class="panel compact-panel">
+            <p class="step">ADD WEBSITE SOURCE</p>
+            <form id="websiteKnowledgeForm" class="stack-form">
+              <label>Website URL<input id="websiteUrl" type="url" placeholder="https://example.com" required /></label>
+              <label>Optional title<input id="websiteTitle" maxlength="300" placeholder="Main website" /></label>
+              <button class="primary-button" type="submit">Ingest website</button>
+            </form>
+            <p class="security-note">The loader accepts public HTTP/HTTPS pages only and rejects local/private network targets.</p>
+          </article>
+        </div>
+
+        <article class="panel source-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="step">ACTIVE SOURCES</p>
+              <h2>Knowledge inventory</h2>
+            </div>
+            <span id="knowledgeActionStatus" class="inline-status"></span>
+          </div>
+          <div id="knowledgeList" class="source-list"><p class="empty-note">Loading sources…</p></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

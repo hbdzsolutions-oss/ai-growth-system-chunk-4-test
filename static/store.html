@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Northstar Botanics — Mock Store</title>
+  <link rel="stylesheet" href="/static/store.css" />
+</head>
+<body>
+  <header class="store-header">
+    <a class="brand" href="/store" aria-label="Northstar Botanics home">NORTHSTAR BOTANICS</a>
+    <nav aria-label="Store navigation">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our story</a>
+      <a href="#shipping">Shipping</a>
+    </nav>
+    <span class="bag" aria-hidden="true">Bag · 0</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">SIMPLE SKINCARE · SMALL BATCH</p>
+        <h1>Everyday formulas for uncomplicated routines.</h1>
+        <p class="hero-text">A controlled mock storefront for testing the AI Growth System visitor conversation in a realistic shopping context.</p>
+        <a class="shop-button" href="#shop">Shop the essentials</a>
+      </div>
+      <div class="hero-art" aria-label="Northstar Botanics product display">
+        <div class="bottle bottle-tall"><span>NS</span></div>
+        <div class="jar"><span>NS</span></div>
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">THE ESSENTIALS</p>
+          <h2>Choose your daily moisturizer</h2>
+        </div>
+        <p>Two simple textures for different skin preferences.</p>
+      </div>
+
+      <div class="products">
+        <article class="product-card">
+          <div class="product-image cream"><div class="product-jar">CLOUD<br />CREAM</div></div>
+          <div class="product-info">
+            <div>
+              <h3>Cloud Cream</h3>
+              <p>Rich daily moisturizer for dry skin.</p>
+            </div>
+            <strong>$28</strong>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image gel"><div class="product-bottle">CLEAR<br />GEL</div></div>
+          <div class="product-info">
+            <div>
+              <h3>Clear Gel</h3>
+              <p>Lightweight daily moisturizer for oily skin.</p>
+            </div>
+            <strong>$24</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <p class="kicker">OUR APPROACH</p>
+      <h2>Less guessing. Fewer products. Clearer answers.</h2>
+      <p>Northstar Botanics is sample data only. There is no checkout, inventory system, payment flow, or ecommerce integration behind this page.</p>
+    </section>
+
+    <section class="shipping" id="shipping">
+      <div><span>01</span><h3>Shipping</h3><p>Orders usually arrive in 2–4 business days.</p></div>
+      <div><span>02</span><h3>Returns</h3><p>Unopened products can be returned within 30 days of delivery.</p></div>
+      <div><span>03</span><h3>Need help?</h3><p>Use the chat bubble to ask a product or policy question.</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Northstar Botanics · controlled demo store</span>
+    <a href="/owner">Open owner validation screen</a>
+  </footer>
+
+  <button class="chat-launcher" id="chatLauncher" type="button" aria-label="Open store assistant" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.75h14a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2h-7.3L7 20.4v-3.15H5a2 2 0 0 1-2-2v-7.5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <span>Ask us</span>
+  </button>
+
+  <aside class="chat-widget" id="chatWidget" aria-label="Store assistant" hidden>
+    <header class="chat-header">
+      <div class="assistant-identity">
+        <span class="assistant-mark">✦</span>
+        <div>
+          <strong>Northstar Assistant</strong>
+          <span>Ask about products or store policies</span>
+        </div>
+      </div>
+      <button class="icon-button" id="chatClose" type="button" aria-label="Close chat">×</button>
+    </header>
+
+    <div class="chat-body" id="storeConversation">
+      <div class="welcome" id="storeEmptyState">
+        <span class="assistant-mark large">✦</span>
+        <h3>How can I help?</h3>
+        <p>Ask which moisturizer fits your skin type, how much it costs, or when an order should arrive.</p>
+      </div>
+    </div>
+
+    <div class="chat-actions">
+      <button id="clearStoreConversation" type="button">Reset chat</button>
+    </div>
+
+    <form class="chat-composer" id="storeChatForm">
+      <input id="storeMessage" maxlength="2000" autocomplete="off" placeholder="Ask a question…" aria-label="Message" />
+      <button id="storeSendButton" type="submit" aria-label="Send message">→</button>
+    </form>
+    <p class="chat-error" id="storeError" role="alert"></p>
+  </aside>
+
+  <script src="/static/store.js"></script>
+</body>
+</html>

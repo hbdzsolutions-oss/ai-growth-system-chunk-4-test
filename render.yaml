@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: ai-growth-system-chunk-5
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: AI_PROVIDER
+        value: gemini
+      - key: AI_MODEL
+        value: gemini-3.5-flash-lite
+      - key: DATABASE_URL
+        sync: false
+      - key: PUBLIC_EMBED_ONLY
+        value: "true"
+      - key: ALLOWED_EMBED_ORIGINS
+        sync: false
+      - key: EMBED_RATE_LIMIT_PER_MINUTE
+        value: "20"
+      - key: DEFAULT_DEPLOYMENT_KEY
+        value: northstar-website-default
+      - key: KNOWLEDGE_RETRIEVAL_LIMIT
+        value: "5"

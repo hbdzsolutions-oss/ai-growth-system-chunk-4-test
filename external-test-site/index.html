@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Independent Test Website</title>
+  <style>
+    body { margin:0; font-family:system-ui,sans-serif; background:#f2efe7; color:#19231d; }
+    main { max-width:760px; margin:0 auto; padding:80px 24px; }
+    .tag { font-size:12px; font-weight:800; letter-spacing:.14em; opacity:.55; }
+    h1 { font-size:clamp(42px,8vw,76px); line-height:.95; letter-spacing:-.055em; margin:18px 0; }
+    p { max-width:620px; font-size:18px; line-height:1.65; opacity:.75; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">SEPARATE ORIGIN · WEBSITE CHANNEL</div>
+    <h1>Northstar Botanics test site</h1>
+    <p>This page is intentionally independent from the AI application. The only installation code is the script tag below.</p>
+  </main>
+
+  <script
+    data-ags-embed
+    data-ags-deployment="northstar-website-default"
+    src="http://127.0.0.1:8000/embed.js"
+    defer></script>
+</body>
+</html>

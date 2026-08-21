@@ -1,0 +1,11 @@
+Brand: Northstar Botanics
+
+Products:
+- Cloud Cream — $28 — rich daily moisturizer for dry skin.
+- Clear Gel — $24 — lightweight daily moisturizer for oily skin.
+
+Shipping: Orders usually arrive in 2–4 business days.
+Returns: Unopened products can be returned within 30 days of delivery.
+Support: hello@northstar.example
+
+Do not claim either product treats acne, eczema, rosacea, or any medical condition. No information about discounts, international shipping, ingredients, stock availability, or guarantees has been provided.
